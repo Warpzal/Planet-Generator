@@ -60,11 +60,17 @@ body * {
   padding: var(--padding);
 }
 .container .right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: var(--padding);
   position: relative;
+}
+.container .right-side .buttons {
+  display: grid;
 }
 @media (min-width: 1000px) {
   .container {
