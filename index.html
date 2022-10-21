@@ -63,12 +63,16 @@
                     <button
                         class="btn"
                         type="button"
-                        onclick="generateCustom()"
+                        onclick="generateCustom(); showPlanet();"
                     >
                         Create
                     </button>
                     <!-- Make a button that saves the image -->
-                    <button class="btn" type="button" onclick="saveImage()">
+                    <button
+                        class="btn"
+                        type="button"
+                        onclick="saveImage(); showPlanet();"
+                    >
                         Save
                     </button>
                     <!-- This button tells the model to return an image for to be displayed in the canvas -->
@@ -76,7 +80,7 @@
                     <button
                         class="btn"
                         type="button"
-                        onclick="generateRandom()"
+                        onclick="generateRandom(); showPlanet();"
                     >
                         Create random
                     </button>

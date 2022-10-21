@@ -59,6 +59,18 @@ slider.oninput = function () {
     output.innerHTML = 'Mean of Z: ' + this.value / 100
 }
 
+// Initially planet takes up space, here it wont until we click a button
+function showPlanet() {
+    const $planet = document.querySelector('.planet')
+    // Show the planet (aka take up space)
+    $planet.style.display = 'block'
+    // Animate the planet on load
+    $planet?.classList.remove('slide-in')
+    setTimeout(() => {
+        $planet?.classList.add('slide-in')
+    })
+}
+
 function erase() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 }

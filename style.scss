@@ -148,8 +148,24 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .planet {
+    display: none;
     margin: 50px 0;
     max-width: 100%;
+    transform: translateX(-100%);
+    transition: all 0.7s;
+}
+
+.slide-in {
+    animation: 0.3s ease-in slide-in forwards;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
 /* A class for the nametag, that has a weirdly shaped rectangle */

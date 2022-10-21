@@ -108,10 +108,35 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .planet {
+  display: none;
   margin: 50px 0;
   max-width: 100%;
+  transform: translateX(-100%);
+  transition: all 0.7s;
 }
 
+.slide-in {
+  -webkit-animation: 0.3s ease-in slide-in forwards;
+          animation: 0.3s ease-in slide-in forwards;
+}
+
+@-webkit-keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 /* A class for the nametag, that has a weirdly shaped rectangle */
 .nametag {
   border: 5px inset rgba(255, 190, 253, 0.399);
