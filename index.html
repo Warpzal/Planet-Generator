@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta
+            charset="utf-8"
+            meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Ganiverse</title>
+        <link rel="stylesheet" href="style.css" />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron"
+            rel="stylesheet"
+        />
+
+        <!-- Imports TensorFlow.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.1/dist/tf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+        <script
+            src="./script.js"
+            onload="loadModel()"
+            onload="isWebGLAvailable()"
+            defer
+        ></script>
+        <script async src="./opencv.js" defer></script>
+        <script src="./stars.js" defer></script>
+        <script src="./effects.js" defer></script>
+    </head>
+    <body style="background-color: #000000">
+        <!-- Defines the container with the create and erase buttons, and the canvas to print an image in -->
+        <div class="container">
+            <div class="left-side">
+                <h1 class="title">Create a Fantasy Planet.</h1>
+                <div class="text">
+                    <p id="checker" style="color: white"></p>
+                    <p id="model_checker" style="color: white"></p>
+                </div>
+                <!-- This defines the canvas which will show the image -->
+                <canvas
+                    class="planet"
+                    id="canvas"
+                    height="500px"
+                    width="500px"
+                ></canvas>
+            </div>
+
+            <div class="right-side">
+                <h2 id="name" class="cyberpunk glitched planet-name mb-2"></h2>
+
+                <!-- Only show the nametag, if the button generateRandom is pressed -->
+                <!-- <p
+                    class="cyberpunk glitched"
+                    id="name"
+                    style="color: white; font-size: 30px; font-family: Orbitron"
+                ></p> -->
+
+                <div class="mb-2">
+                    <!-- This button tells the model to return an image for to be displayed in the canvas -->
+                    <button
+                        class="btn"
+                        type="button"
+                        onclick="generateCustom()"
+                    >
+                        Create
+                    </button>
+                    <!-- Make a button that saves the image -->
+                    <button class="btn" type="button" onclick="saveImage()">
+                        Save
+                    </button>
+                    <!-- This button tells the model to return an image for to be displayed in the canvas -->
+                    <!-- After generating, create a random name with the function generateName() and display it below -->
+                    <button
+                        class="btn"
+                        type="button"
+                        onclick="generateRandom()"
+                    >
+                        Create random
+                    </button>
+                </div>
+
+                <input
+                    type="range"
+                    min="-100"
+                    max="100"
+                    value="0"
+                    class="slider mb-2"
+                    id="slider"
+                />
+                <p id="output" style="color: white"></p>
+            </div>
+        </div>
+    </body>
+</html>
