@@ -61,16 +61,23 @@ slider.oninput = function () {
 
 // Initially planet takes up space, here it wont until we click a button
 function showPlanet() {
-    // const $scanner = document.querySelector('.scanner')
     const $planet = document.querySelector('.planet')
-    // Show the planet (aka take up space)
-    // $scanner.style.display = 'block'
     // Animate the planet on load
     $planet?.classList.remove('slide-in')
     setTimeout(() => {
+        $planet.classList.add('slide-in')
         $planet.style.display = 'block'
-        $planet?.classList.add('slide-in')
     })
+}
+
+function showScanner() {
+    const $scanner = document.querySelector('.scanner')
+    $scanner.style.display = 'block'
+}
+
+function hideScanner() {
+    const $scanner = document.querySelector('.scanner')
+    $scanner.style.display = 'none'
 }
 
 function erase() {
@@ -112,6 +119,7 @@ async function loadModel() {
 }
 
 async function generateCustom() {
+    showScanner()
     await ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     let input = document.getElementById('slider').value
@@ -140,9 +148,11 @@ async function generateCustom() {
 
     name_planet()
     document.getElementById('name').style.display = 'block'
+    hideScanner()
 }
 
 async function generateRandom() {
+    showScanner()
     await ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     inputtensor = tf.randomNormal([1, 100])
@@ -177,6 +187,7 @@ async function generateRandom() {
 
     name_planet()
     document.getElementById('name').style.display = 'block'
+    hideScanner()
 }
 
 var generator

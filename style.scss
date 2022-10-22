@@ -54,40 +54,6 @@ body * {
         7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
     outline: none;
     overflow: hidden;
-
-    // &:hover {
-    //     background: transparent;
-    //     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
-    //         -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
-    //         inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
-    //         inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
-    //     color: #fff;
-    // }
-
-    // &:after {
-    //     position: absolute;
-    //     content: ' ';
-    //     z-index: -1;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 100%;
-    //     background-image: linear-gradient(
-    //         315deg,
-    //         var(--secondary-color) 0%,
-    //         var(--primary-color) 74%
-    //     );
-    //     transition: all 0.3s ease;
-    // }
-
-    // &:hover:after {
-    //     -webkit-transform: scale(2) rotate(180deg);
-    //     transform: scale(2) rotate(180deg);
-    //     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
-    //         -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
-    //         inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
-    //         inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
-    // }
 }
 
 .glitch-effect {
@@ -771,18 +737,6 @@ hr {
 .planet-container {
     isolation: isolate;
     position: relative;
-
-    // &::after {
-    //     content: '';
-    //     margin: 0 auto;
-    //     position: absolute;
-    //     inset: 0;
-    //     left: -80px;
-    //     animation-name: scan2;
-    //     animation-duration: 2s;
-    //     animation-timing-function: linear;
-    //     border-top: 5px solid var(--secondary-color);
-    // }
 }
 
 .planet {
@@ -808,7 +762,6 @@ hr {
 .scanner {
     position: absolute;
     display: none;
-    // top: 0 !important;
     z-index: 10000;
     width: 100%;
     max-width: 500px;
@@ -824,44 +777,26 @@ hr {
     // animation-play-state: paused;
 }
 
-@keyframes scan2 {
+@keyframes scan {
     0% {
-        background: black;
-        top: 0%;
-        transform: scaleX(0.8);
-    }
-    50% {
+        box-shadow: 0px 0px 8px 10px var(--primary-color);
         top: 50%;
         transform: scaleX(1);
     }
-    100% {
-        background: black;
-        top: 100%;
+    25% {
+        box-shadow: 0px 6px 8px 10px var(--secondary-color);
+        top: 5px;
         transform: scaleX(0.8);
     }
+    50% {
+        transform: scaleX(1);
+    }
+    75% {
+        box-shadow: 0px -6px 8px 10px var(--primary-color);
+        top: 98%;
+        transform: scaleX(0.8);
+    }
+    100% {
+        transform: scaleX(1);
+    }
 }
-
-// @keyframes scan {
-//     0% {
-//         box-shadow: 0px 0px 8px 10px var(--primary-color);
-//         top: 0%;
-//         transform: scaleX(1);
-//     }
-//     25% {
-//         box-shadow: 0px 6px 8px 10px var(--secondary-color);
-//         // top: 5px;
-//         transform: scaleX(0.8);
-//     }
-//     50% {
-//         top: 50%;
-//         transform: scaleX(1);
-//     }
-//     75% {
-//         box-shadow: 0px -6px 8px 10px var(--primary-color);
-//         top: 98%;
-//         transform: scaleX(0.8);
-//     }
-//     100% {
-//         transform: scaleX(1);
-//     }
-// }
