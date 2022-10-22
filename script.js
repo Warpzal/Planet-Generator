@@ -61,10 +61,10 @@ slider.oninput = function () {
 
 // Initially planet takes up space, here it wont until we click a button
 function showPlanet() {
-    const $scanner = document.querySelector('.scanner')
+    // const $scanner = document.querySelector('.scanner')
     const $planet = document.querySelector('.planet')
     // Show the planet (aka take up space)
-    $scanner.style.display = 'block'
+    // $scanner.style.display = 'block'
     // Animate the planet on load
     $planet?.classList.remove('slide-in')
     setTimeout(() => {

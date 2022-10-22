@@ -55,14 +55,6 @@ body * {
     outline: none;
     overflow: hidden;
 
-    &::before {
-        animation: glitch-test 1.5s infinite linear alternate-reverse;
-    }
-
-    &::after {
-        animation: glitch-test 2s infinite linear alternate;
-    }
-
     // &:hover {
     //     background: transparent;
     //     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
@@ -779,6 +771,18 @@ hr {
 .planet-container {
     isolation: isolate;
     position: relative;
+
+    // &::after {
+    //     content: '';
+    //     margin: 0 auto;
+    //     position: absolute;
+    //     inset: 0;
+    //     left: -80px;
+    //     animation-name: scan2;
+    //     animation-duration: 2s;
+    //     animation-timing-function: linear;
+    //     border-top: 5px solid var(--secondary-color);
+    // }
 }
 
 .planet {
@@ -788,6 +792,17 @@ hr {
     transform: translateX(-100%);
     transition: all 0.7s;
     z-index: -1;
+}
+
+.scanner-2 {
+    margin: 0 auto;
+    position: absolute;
+    inset: 0;
+    left: -80px;
+    animation-name: scan2;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    border-top: 5px solid var(--secondary-color);
 }
 /* animated laser beam */
 .scanner {
@@ -809,26 +824,44 @@ hr {
     // animation-play-state: paused;
 }
 
-@keyframes scan {
+@keyframes scan2 {
     0% {
-        box-shadow: 0px 0px 8px 10px var(--primary-color);
-        top: 50%;
-        transform: scaleX(1);
-    }
-    25% {
-        box-shadow: 0px 6px 8px 10px var(--secondary-color);
-        top: 5px;
+        background: black;
+        top: 0%;
         transform: scaleX(0.8);
     }
     50% {
+        top: 50%;
         transform: scaleX(1);
-    }
-    75% {
-        box-shadow: 0px -6px 8px 10px var(--primary-color);
-        top: 98%;
-        transform: scaleX(0.8);
     }
     100% {
-        transform: scaleX(1);
+        background: black;
+        top: 100%;
+        transform: scaleX(0.8);
     }
 }
+
+// @keyframes scan {
+//     0% {
+//         box-shadow: 0px 0px 8px 10px var(--primary-color);
+//         top: 0%;
+//         transform: scaleX(1);
+//     }
+//     25% {
+//         box-shadow: 0px 6px 8px 10px var(--secondary-color);
+//         // top: 5px;
+//         transform: scaleX(0.8);
+//     }
+//     50% {
+//         top: 50%;
+//         transform: scaleX(1);
+//     }
+//     75% {
+//         box-shadow: 0px -6px 8px 10px var(--primary-color);
+//         top: 98%;
+//         transform: scaleX(0.8);
+//     }
+//     100% {
+//         transform: scaleX(1);
+//     }
+// }
